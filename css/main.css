@@ -1,7 +1,7 @@
 @import url(reset.css);
 @import url(home/home.css);
-@import url(plan.css);
-@import url(subpage1.css);
+@import url(plan/plan.css);
+@import url(sub1/subpage1.css);
 
 /* 스타일 가이드 */
 :root {
