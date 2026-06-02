@@ -1,182 +1,530 @@
-body{
-  overflow-x: hidden;
+/* 공통 컨테이너 */
+.h-inner {
+  max-width: 1200px;
+  margin: auto;
 }
-.rainbow-bg {
-  width: 100%;
-  background-image: url("/asset/mainpage/rainbow-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  min-height: 500px;
-  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+
+/* MAIN - TOOL 소개 */
+
+.solution {
+  background:
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(255, 180, 220, 0.25),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 75% 60%,
+      rgba(180, 255, 210, 0.25),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #f5f7ff 0%, #fff 50%, #f7fff8 100%);
+
+  padding: 140px 0 110px;
   position: relative;
   z-index: 2;
-  transform: translateY(-150px);
-  margin-bottom: -150px;
-  padding: 0 100px;
+  clip-path: polygon(0 90px, 100% 0, 100% 100%, 0 100%);
+  margin-top: -90px;
 }
 
-/* 가로 flex 배치 */
-.content1 {
+.solution-inner {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 120px;
-  padding: 220px 0 120px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: clamp(20px, 3vw, 60px);
 }
 
-/* 왼쪽 텍스트 */
-.content-text {
+/* 툴 소개 - 타이틀 */
+
+.solution-title {
+  width: clamp(200px, 22vw, 250px);
   flex-shrink: 0;
 }
 
-.content-text h1 {
-  font-size: 45px;
-  font-weight: 700;
-  color: #1a1a1a;
-  line-height: 1.4;
-  margin-bottom: 40px;
+.solution-title h2 {
+  font-size: clamp(30px, 3vw, 45px);
+  line-height: 1.2;
+  margin-bottom: clamp(20px, 2vw, 35px);
 }
 
-.content-text p {
-  font-size: 20px;
-  color: #555;
+.solution-title p {
+  font-size: clamp(14px, 1.3vw, 20px);
   line-height: 1.8;
-  margin-bottom: 100px;
+  margin-bottom: clamp(30px, 4vw, 60px);
 }
 
-.button-purple {
-  display: inline-block;
-  background-color: var(--point);
-  color: #ffffff;
-  padding: 9px 50px;
-  border-radius: 30px;
-  font-size: 20px;
-  cursor: pointer;
-  transition:
-    background 0.2s,
-    color 0.2s;
-}
-/* 카드 그리드 */
-.tool-list {
-  min-width: 0;
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  
-}
-
-/* 카드 */
-
-.sol-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  min-height: 230px;
-  padding: 24px;
-  border-radius: 24px;
-  background: #fff;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.tool-list .sol-card:hover {
-  transform: translateY(-4px) scale(1.05);
-  transition: 0.3s;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
-}
-.sol-card h3 {
-  font-size: 25px;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 6px;
-}
-.sol-card p {
-  font-size: 18px;
-  line-height: 24px;
-}
-/* 카드 기울임 */
-.sol-card:nth-child(1) { transform: rotate(-6deg); }
-.sol-card:nth-child(2) { transform: rotate(2deg); }
-.sol-card:nth-child(3) { transform: rotate(5deg); }
-.sol-card:nth-child(4) { transform: rotate(-3deg); }
-.sol-card:nth-child(5) { transform: rotate(4deg); }
-
-/* 아이콘 */
-.sol-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 10px;
-  margin-bottom: 4px;
+.solution-btn {
+  width: clamp(150px, 16vw, 200px);
+  height: clamp(42px, 4vw, 50px);
+  background: var(--point);
+  border-radius: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
+
+.solution-btn a {
+  color: #fff;
+  font-size: clamp(14px, 1.2vw, 18px);
+}
+
+
+/* 툴 소개 - 카드섹션 */
+
+.solution-cards {
+  width: clamp(420px, 55vw, 650px);
+  flex-shrink: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.sol-card {
+  background: white;
+  border-radius: clamp(10px, 1vw, 16px);
+  padding: clamp(10px, 1vw, 16px);
+  min-height: clamp(130px, 15vw, 180px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.sol-card:nth-child(1) {
+  transform: rotate(-3deg);
+}
+
+.sol-card:nth-child(2) {
+  transform: rotate(2deg);
+}
+
+.sol-card:nth-child(3) {
+  transform: rotate(-2deg);
+}
+
+.sol-card:nth-child(4) {
+  transform: rotate(2deg);
+}
+
+.sol-card:nth-child(5) {
+  transform: rotate(-2deg);
+}
+
+.sol-card:nth-child(6) {
+  transform: rotate(3deg);
+}
+
+.sol-card:hover {
+  transform: translateY(-8px) scale(1.03);
+}
+
+.sol-icon {
+  width: clamp(36px, 4vw, 50px);
+  height: clamp(36px, 4vw, 50px);
+border-radius: 50px;
+  margin-bottom: clamp(8px, 1vw, 12px);
+}
+
 .sol-icon img {
+  border-radius: 5px;
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-
-/* 아이콘 색상 (이미지 없을 때) */
-.ic-cc {
-  background: linear-gradient(135deg, #da0f0f, #ff6b6b);
-}
-.ic-lr {
-  background: linear-gradient(135deg, #1c3fce, #5577ff);
-}
-.ic-lrc {
-  background: linear-gradient(135deg, #2196c4, #5bc8f5);
-}
-.ic-ps {
-  background: linear-gradient(135deg, #0d7fc1, #31aff5);
-}
-.ic-st {
-  background: linear-gradient(135deg, #c62535, #e8526a);
+.sol-card h3 {
+  font-size: clamp(14px, 1.3vw, 18px);
 }
 
-/* 화살표 */
+.sol-card p {
+  font-size: clamp(11px, 1vw, 14px);
+  line-height: 1.6;
+  padding-bottom: 10px;
+}
 .sol-arrow {
-  padding-top: 6px;
-  margin-left: auto;
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
+  margin-top: 12px;
+  text-align: right;
 }
 
-/* content1- 버튼 리스트 */
-.content1-butList {
-  width: 160px;
+
+
+.solution-category {
+  width: 150px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  flex-shrink: 0;
+}
+
+.solution-category a {
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 0 16px;
+
+  background: #fff;
+  border-radius: 999px;
+
+  font-size: 14px;
+  color: #333;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+
+  transition: 0.3s;
+}
+
+.solution-category a img {
+  width: 16px;
+  height: 16px;
+}
+
+.solution-category a.active,
+.solution-category a:hover {
+  background: #e9ddff;
+  color: #6a4dff;
+}
+
+
+/* MAIN - FIREFLY 설명 */
+
+.firefly {
+  width: 100%;
+  height: 600px;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.firefly-inner {
+  display: flex;
+  max-width: 1200px; /* 추가 */
+  margin: 0 auto; /* 추가 */
+  width: 100%;
+  min-height: 100%;
+}
+
+/* ===== 왼쪽 (비디오 + 텍스트) ===== */
+.firefly-left {
+  position: relative;
+  width: 40%;
+  min-height: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.firefly-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 29px;
 }
 
-.content1-button {
-  width: 100%;
-  height: 55px;
+.firefly-content h2 {
+  font-size: 45px;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0 0 35px;
+}
+
+.firefly-content p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  margin: 0 0 95px;
+}
+
+.detail-btn {
+  display: inline-block;
+  padding: 11px 26px;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 50px;
+  color: #000000;
+  font-size: 20px;
+  width: fit-content;
+}
+
+/* ===== 오른쪽 ===== */
+.firefly-right {
+  flex: 1;
+  background-color: #000000;
+  padding: 44px 48px 40px;
   display: flex;
-  padding: 12px 12px;
+  flex-direction: column;
   justify-content: center;
+  gap: 20px;
+}
+
+.right-top h3 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px;
+}
+
+.right-top p {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* ===== 카드 목록 ===== */
+.firefly-card-wrap {
+  display: flex;
+  gap: 20px;
+}
+
+.firefly-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.firefly-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
+}
+
+.firefly-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.firefly-card h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 14px 16px 6px;
+}
+
+.firefly-card p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.55;
+  margin: 0 16px 16px;
+}
+
+/* ===== Firefly 버튼 ===== */
+.firefly-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 1px solid white;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 20px;
+  width: fit-content;
+}
+
+/* plan */
+
+/* ===== Plan Section ===== */
+.plan {
+  width: 100%;
+  background-color: #fff;
+  padding: 80px 0;
+}
+
+.plan-inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
   align-items: center;
-  gap: 10px;
-  background-color: var(--sub-color-2);
-  border-radius: 28px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  font-size: var(--p-c1920px---menu);
-  cursor: pointer;
+  gap: 50px;
+}
+
+/* ===== 왼쪽 타이틀 ===== */
+.plan-title {
+  flex-shrink: 0;
+  width: 270px;
+}
+
+.plan-title h2 {
+  font-size: 45px;
+  color: #000000;
+  margin: 0 0 35px;
+}
+
+.plan-title p {
+  font-size: 20px;
+  color: #050505;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ===== 카드 컨테이너 ===== */
+.plan-container {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+  min-width: 0; /* 추가 */
+}
+
+/* ===== 카드 기본 ===== */
+.plan-list {
+  position: relative;
+  flex: 1;
+  background: #fff;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0; /* 추가 */
+}
+
+.plan-list:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.09);
+}
+
+/* ===== 추천 카드 (active) ===== */
+.plan-list.active {
+  border: 2px solid var(--point);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.15);
+}
+
+/* ===== 추천 배지 ===== */
+.best {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
   white-space: nowrap;
 }
 
-.content1-button img {
-  width: 26px;
-  height: 26px;
-  aspect-ratio: 1/1;
+/* ===== 플랜 타입 (개인 / 학생 및 교사 / 기업) ===== */
+.plan-type {
+  font-size: 20px;
+  color: #999999;
+  font-weight: 500;
+}
+
+/* ===== 앱 이름 ===== */
+.plan-list h3 {
+  font-size: 16px;
+  color: #000000;
+}
+
+/* ===== 가격 ===== */
+.home-price,
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.price-w {
+  font-size: 32px;
+  color: #000000;
+}
+
+.home-price span,
+.price span {
+  font-size: 0.82rem;
+  color: #888;
+}
+
+/* ===== 설명 텍스트 ===== */
+.plan-listP {
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.8;
+  margin: 0;
+  flex: 1;
+}
+
+/* ===== 구매 버튼 ===== */
+.plan-btn {
+  display: block;
+  text-align: center;
+  padding: 11px 0;
+  border: 1.5px solid #ccc;
+  border-radius: 50px;
+  color: #1a1a1a;
+  font-size: 16px;
+}
+
+/* active 카드의 버튼 */
+.plan-list.active .plan-btn {
+  background: #7c3aed;
+  border-color: #7c3aed;
+  color: #fff;
+}
+
+/* ===== 더 알아보기 ===== */
+.plan-more {
+  flex-shrink: 0;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plan-more a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
+}
+
+.plan-more a span {
+  font-size: 20px;
+}
+
+/* ===== 반응형 ===== */
+@media (max-width: 1024px) {
+  .plan-more {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .plan-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .plan-title {
+    width: 100%;
+  }
+
+  .plan-container {
+    width: 100%;
+    flex-direction: column;
+  }
 }
