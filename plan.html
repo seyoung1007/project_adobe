@@ -6,6 +6,7 @@
     <title>가격 및 멤버십 플랜</title>
     <!-- css 연결 -->
     <link rel="stylesheet" href="css/main.css" />
+    
     <!-- 구글 폰트 연결 -->
     <link
       rel="stylesheet"
@@ -18,7 +19,9 @@
       <!-- ===== 상단 ===== -->
       <header class="plan-header">
         <div class="adobe-logo">
-          <img src="asset/logo.png" alt="어도비 로고" />
+          <a href="index.html">
+            <img src="asset/logo.png" alt="어도비 로고" />
+          </a>
         </div>
       </header>
 
@@ -47,46 +50,54 @@
           </div>
         </div>
 
-        <!-- Plan cards -->
-        <!-- 가장 많이 선택하는 플랜 -->
-        <div class="plan-cards-section">
+        <!-- ============= 가장 많이 선택하는 플랜 ============= -->
+        <div class="best-plan-section">
           <h2 class="contents-title">가장 많이 선택 하는 플랜</h2>
-          <div class="plan-cards-grid">
-            <!-- Creative Cloud All Apps - Featured -->
-            <!-- creative cloud 앱 할인 소개 카드 -->
-            <div class="plan-card featured">
-              <div class="badge">
-                <p class="badge-txt">25%</p>
+          <!-- 카드 그리드 -->
+          <div class="cards-grid">
+            <!-- 카드 전체 영역 (카드 한 장 > Creative Cloud) -->
+            <article class="program-card featured">
+              <!-- 프로그램 썸네일 -->
+              <div class="program-card_thumb">
+                <img
+                  src="asset/program-icon/creativeCloud.png"
+                  alt="creativeCloud"
+                />
               </div>
-              
-              <!-- 카드 상단 -->
-              <div class="card-top cc-top">
-                <div class="program-icon cc-icon">
-                  <img
-                    src="asset/program-icon/creativeCloud.png"
-                    alt="creative-cloud"
-                  />
-                </div>
-                
-                <!-- 카드 텍스트 -->
-                <div class="card-text cc-text">
-                  <h3 class="card-title cc-title">Creative Cloud</h3>
-                  <p class="card-des cc-des">
-                    Photoshop, Illustrator, Premiere, Acrobat Pro 등 20개 이상의
-                    앱과 함께 Adobe Firefly까지 이용하세요.
-                  </p>
-                </div>
+              <!-- 프로그램 텍스트 -->
+              <div class="program-card_info">
+                <!-- 프로그램명 -->
+                <h3 class="program-card_title">Creative Cloud</h3>
+                <!-- 프로그램 설명 -->
+                <p class="program-card_desc">
+                  Photoshop, Illustrator, Premiere, Acrobat Pro 등 20개 이상의
+                  앱과 함께 Adobe Firefly까지 이용하세요.
+                </p>
               </div>
-              <!-- 카드 하단 -->
-              <div class="card-price-box cc-price-box">
-                <div class="card-price cc-price">₩58,200<span>/월</span></div>
-                <p class="original-price cc-ori-pri">정상가 <span>₩70,100/월</span></p>
+              <!-- 프로그램 금액 영역 -->
+              <div class="program-card_price-area">
+                <!-- 프로그램 할인가 -->
+                <p class="program-card_sale-price">
+                  <strong>₩58,200</strong>
+                  <span>/월</span>
+                </p>
+                <!-- 프로그램 정상가 -->
+                <p class="program-card_regular-price">
+                  정상가 <del>₩70,100</del><span>/월</span>
+                </p>
               </div>
-              <div class="card-btns">
-                <button class="btn-primary">구매</button>
-                <button class="btn-outline cc-plan">자세히 보기</button>
+              <!-- 프로그램 하단 버튼 -->
+              <div class="program-card_button-group">
+                <!-- 구매 버튼 -->
+                <button type="button" class="program-card_button">
+                  구매
+                </button>
+                <!-- 자세히 보기 링크 -->
+                <a href="#" class="program-card_link">자세히 보기</a>
               </div>
-              <div class="card-app-row">
+              <!-- 프로그램 하단 비주얼 -->
+              <div class="program-card_visual">
+                <div class="card-app-row">
                 <div class="mini-icon lr">Lr</div>
                 <div class="mini-icon st">St</div>
                 <div class="mini-icon me">Me</div>
@@ -94,132 +105,14 @@
                 <div class="mini-icon pr">Pr</div>
                 <div class="mini-icon more">+15</div>
               </div>
-            </div>
-
-            <!-- 두번째 카드 -->
-            <!-- Photography -->
-            <div class="plan-card">
-              <div class="program-icon">
-                <div class="program-icon lr">
-                  <img src="asset/program-icon/Lr.png" alt="lr 로고" />
-                </div>
-                <div class="program-icon ps">
-                  <img src="asset/program-icon/ps.png" alt="phtoshop 로고" />
-                </div>
               </div>
-              <h3>포토그래피</h3>
-              <p class="desc">
-                데스크탑, 웹, iPhone, iPad용 Photoshop, 1TB 클라우드 스토리지
-              </p>
-              <div class="price-btn-box">
-                <div class="price">
-                  ₩46,860<span class="pri-month">/월</span>
-                </div>
-                <div class="card-btns">
-                  <button class="btn-primary">구매</button>
-                  <button class="btn-outline">자세히 보기</button>
-                </div>
-              </div>
-              <div class="card-thumbnail photo-bg">
-                <svg width="60" height="40" viewBox="0 0 60 40" fill="none">
-                  <circle
-                    cx="30"
-                    cy="20"
-                    r="12"
-                    fill="rgba(255,255,255,0.15)"
-                  ></circle>
-                  <circle
-                    cx="30"
-                    cy="20"
-                    r="7"
-                    fill="rgba(255,255,255,0.25)"
-                  ></circle>
-                </svg>
-              </div>
-            </div>
-
-            <!-- Photoshop -->
-            <div class="plan-card">
-              <div class="program-icon">
-                <div class="program-icon ps2">
-                  <img src="asset/program-icon/ps.png" alt="phtoshop 로고" />
-                </div>
-              </div>
-              <h3>Photoshop</h3>
-              <p class="desc">그래픽, 사진, 아트워크 작업에 집중하시나요?</p>
-              <div class="price">₩30,800<span class="pri-month">/월</span></div>
-              <div class="card-btns">
-                <button class="btn-primary">구매</button>
-                <button class="btn-outline">자세히 보기</button>
-              </div>
-              <div class="card-thumbnail photoshop-bg">
-                <svg width="60" height="40" viewBox="0 0 60 40" fill="none">
-                  <rect
-                    x="10"
-                    y="8"
-                    width="40"
-                    height="24"
-                    rx="4"
-                    fill="rgba(49,168,255,0.3)"
-                  ></rect>
-                  <circle
-                    cx="22"
-                    cy="18"
-                    r="5"
-                    fill="rgba(49,168,255,0.6)"
-                  ></circle>
-                </svg>
-              </div>
-            </div>
-
-            <!-- Acrobat Pro -->
-            <div class="plan-card">
-              <div class="program-icon">
-                <div class="program-icon acro">
-                  <img
-                    src="asset/program-icon/acrobat.png"
-                    alt="acrobat 로고"
-                  />
-                </div>
-              </div>
-              <h3>Acrobat Pro</h3>
-              <div class="discount-info">학생 및 교사라면 최대 60% 할인!</div>
-              <p class="desc-sm">할인혜택 이용하기</p>
-              <div class="card-btns">
-                <button class="btn-primary">구매</button>
-                <button class="btn-outline">자세히 보기</button>
-              </div>
-            </div>
-
-            <!-- Adobe Firefly Pro Plus -->
-            <div class="plan-card">
-              <div class="badge">
-                <p class="badge-txt">50%</p>
-              </div>
-              <div class="program-icon">
-                <div class="program-icon fi">
-                  <img src="asset/program-icon/Fi.png" alt="fi 로고" />
-                </div>
-              </div>
-              <h3>Adobe Firefly Pro Plus</h3>
-              <p class="desc">
-                10,000개의 크레딧을 활용하여 콘텐츠의 완성도를 높여보세요.
-              </p>
-              <div class="price">₩28,050<span class="pri-month">/월</span></div>
-              <p class="original-price">정상가 ₩56,100/월</p>
-              <div class="card-btns">
-                <button class="btn-primary">구매</button>
-                <button class="btn-outline">자세히 보기</button>
-              </div>
-            </div>
-          </div>
-        </div>
+            </article>
       </section>
 
       <!-- ===== MAIN (메인): 앱 둘러보기 ===== -->
       <section class="plan-main">
         <div class="app-browse-header">
-          <h2>앱 둘러보기</h2>
+          <h2 class="contents-title">앱 둘러보기</h2>
           <div class="search-bar">
             <svg viewBox="0 0 24 24">
               <path
@@ -544,36 +437,8 @@
       </footer>
     </div>
 
-    <script>
-      // User type button toggle
-      document.querySelectorAll(".user-type-btns button").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          document
-            .querySelectorAll(".user-type-btns button")
-            .forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
-        });
-      });
-
-      // Sidebar item toggle
-      document.querySelectorAll(".sidebar-item").forEach((item) => {
-        item.addEventListener("click", () => {
-          document
-            .querySelectorAll(".sidebar-item")
-            .forEach((i) => i.classList.remove("active"));
-          item.classList.add("active");
-        });
-      });
-
-      // Pagination dots
-      document.querySelectorAll(".dot").forEach((dot) => {
-        dot.addEventListener("click", () => {
-          document
-            .querySelectorAll(".dot")
-            .forEach((d) => d.classList.remove("active"));
-          dot.classList.add("active");
-        });
-      });
-    </script>
+    
   </body>
+  <!-- js 연결 -->
+     <script src="js/plan/best-plan.js"></script>
 </html>
