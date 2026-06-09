@@ -1,47 +1,77 @@
 <!doctype html>
 <html lang="ko">
   <head>
+    <!-- ===== 문서 기본 설정 ===== -->
+    <!-- 한글 깨짐 방지를 위한 문자 인코딩 설정 -->
     <meta charset="UTF-8" />
+
+    <!-- 반응형 웹을 위한 viewport 설정 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 브라우저 탭에 표시되는 페이지 제목 -->
     <title>가격 및 멤버십 플랜</title>
-    <!-- css 연결 -->
+
+    <!-- ===== CSS 파일 연결 ===== -->
+    <!-- 전체 페이지 스타일을 관리하는 main.css 연결 -->
     <link rel="stylesheet" href="css/main.css" />
-    
-    <!-- 구글 폰트 연결 -->
+
+    <!-- ===== 구글 폰트 연결 ===== -->
+    <!-- Noto Sans KR 폰트 사용 -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Noto Sans KR:wght@400;700&display=swap"
     />
   </head>
+
   <body>
-    <!-- 전체 영역 -->
+    <!--
+      ===== 전체 페이지 래퍼 =====
+      페이지 전체 레이아웃을 감싸는 최상위 div
+      header / upper / main / footer 영역을 모두 포함
+    -->
     <div class="plan-wrap">
-      <!-- ===== 상단 ===== -->
-      <header class="plan-header">
-        <div class="adobe-logo">
-          <a href="index.html">
-            <img src="asset/logo.png" alt="어도비 로고" />
-          </a>
+      <!--
+        ===== HEADER : 상단 네비게이션 영역 =====
+        현재는 Adobe 로고만 들어가 있음
+        추후 메뉴, 로그인, 앱 전환기 등을 추가할 수 있는 영역
+      -->
+      <header class="header">
+        <div class="header-inner">
+          <!-- 로고 영역 -->
+          <div class="logo">
+            <span class="adobe-logo">Adobe</span>
+          </div>
         </div>
       </header>
 
-      <!-- ===== UPPER (상단): 타이틀 + 버튼 + 플랜 카드 ===== -->
+      <!--
+        ===== UPPER : 상단 비주얼 + 플랜 카드 영역 =====
+        페이지의 첫 인상을 담당하는 영역
+        Creative Cloud 소개 문구, 사용자 유형 버튼, 추천 플랜 카드 포함
+      -->
       <section class="plan-upper">
-        <!-- 타이틀 -->
+        <!--
+          ===== 비주얼 타이틀 영역 =====
+          페이지 메인 문구와 설명 문구 표시
+        -->
         <div class="visual-title">
           <h1>
-            <span class="gradient-text">Creative Cloud</span
-            ><br />앱·서비스·플랜 한 눈에 보기
+            <span class="gradient-text">Creative Cloud</span><br />
+            앱·서비스·플랜 한 눈에 보기
           </h1>
+
           <p class="visual-desc">
             모든 플랜, 부담 없이 시작하세요. 구매 후 14일 이내에는 언제든지
             무료로 취소하실 수 있습니다
           </p>
         </div>
 
-        <!-- User type -->
+        <!--
+          ===== 사용자 유형 선택 버튼 영역 =====
+          개인 / 기업 / 학생 및 교사 / 학교 유형을 선택하는 버튼 그룹
+          현재는 디자인용 버튼이며, active 클래스가 선택 상태를 의미함
+        -->
         <div class="user-type">
-          <!-- <h2>어떤 사용자이신가요?</h2> -->
           <div class="user-type-btns">
             <button class="active">개인</button>
             <button>기업</button>
@@ -50,358 +80,364 @@
           </div>
         </div>
 
-        <!-- ============= 가장 많이 선택하는 플랜 ============= -->
+        <!--
+          ===== 가장 많이 선택하는 플랜 영역 =====
+          추천 플랜 카드가 들어가는 섹션
+
+          JS 연동
+          - best-plan.js와 연결 가능
+          - 추후 카드 데이터를 JS로 추가 생성할 수 있음
+        -->
         <div class="best-plan-section">
+          <!-- 섹션 제목 -->
           <h2 class="contents-title">가장 많이 선택 하는 플랜</h2>
-          <!-- 카드 그리드 -->
+
+          <!--
+            추천 플랜 카드 그리드
+            현재는 Creative Cloud 카드 1개만 하드코딩되어 있음
+          -->
           <div class="cards-grid">
-            <!-- 카드 전체 영역 (카드 한 장 > Creative Cloud) -->
+            <!--
+              ===== Creative Cloud 추천 카드 =====
+              featured 클래스:
+              - 대표 추천 카드 스타일 적용
+              - 일반 카드보다 강조된 디자인 가능
+            -->
             <article class="program-card featured">
-              <!-- 프로그램 썸네일 -->
+              <!-- 프로그램 썸네일 이미지 영역 -->
               <div class="program-card_thumb">
                 <img
                   src="asset/program-icon/creativeCloud.png"
                   alt="creativeCloud"
                 />
               </div>
-              <!-- 프로그램 텍스트 -->
+
+              <!-- 프로그램명 + 설명 영역 -->
               <div class="program-card_info">
-                <!-- 프로그램명 -->
                 <h3 class="program-card_title">Creative Cloud</h3>
-                <!-- 프로그램 설명 -->
                 <p class="program-card_desc">
                   Photoshop, Illustrator, Premiere, Acrobat Pro 등 20개 이상의
                   앱과 함께 Adobe Firefly까지 이용하세요.
                 </p>
               </div>
-              <!-- 프로그램 금액 영역 -->
+
+              <!-- 가격 정보 영역 -->
               <div class="program-card_price-area">
-                <!-- 프로그램 할인가 -->
+                <!-- 할인가 -->
                 <p class="program-card_sale-price">
                   <strong>₩58,200</strong>
                   <span>/월</span>
                 </p>
-                <!-- 프로그램 정상가 -->
+
+                <!-- 정상가 -->
                 <p class="program-card_regular-price">
                   정상가 <del>₩70,100</del><span>/월</span>
                 </p>
               </div>
-              <!-- 프로그램 하단 버튼 -->
+
+              <!-- 구매 버튼 + 자세히 보기 링크 영역 -->
               <div class="program-card_button-group">
-                <!-- 구매 버튼 -->
-                <button type="button" class="program-card_button">
-                  구매
-                </button>
-                <!-- 자세히 보기 링크 -->
+                <button type="button" class="program-card_button">구매</button>
                 <a href="#" class="program-card_link">자세히 보기</a>
               </div>
-              <!-- 프로그램 하단 비주얼 -->
+
+              <!--
+                카드 하단 비주얼 영역
+                Creative Cloud에 포함된 앱 아이콘들을 간단히 보여주는 영역
+              -->
               <div class="program-card_visual">
                 <div class="card-app-row">
-                <div class="mini-icon lr">Lr</div>
-                <div class="mini-icon st">St</div>
-                <div class="mini-icon me">Me</div>
-                <div class="mini-icon md">Md</div>
-                <div class="mini-icon pr">Pr</div>
-                <div class="mini-icon more">+15</div>
-              </div>
+                  <div class="mini-icon lr">Lr</div>
+                  <div class="mini-icon st">St</div>
+                  <div class="mini-icon me">Me</div>
+                  <div class="mini-icon md">Md</div>
+                  <div class="mini-icon pr">Pr</div>
+                  <div class="mini-icon more">+15</div>
+                </div>
               </div>
             </article>
+          </div>
+        </div>
       </section>
 
-      <!-- ===== MAIN (메인): 앱 둘러보기 ===== -->
-      <section class="plan-main">
-        <div class="app-browse-header">
-          <h2 class="contents-title">앱 둘러보기</h2>
-          <div class="search-bar">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-            <input type="text" placeholder="앱 검색하기" />
-          </div>
-          <select class="sort-select">
-            <option>인기순</option>
-            <option>이름순</option>
-            <option>가격순</option>
-          </select>
-          <a href="#" class="all-apps-link">모든 앱 보러가기 →</a>
-        </div>
+      <!--
+        ===== MAIN : 앱 둘러보기 영역 =====
+        Adobe 앱을 카테고리별로 탐색하는 핵심 기능 영역
 
-        <div class="app-browse-layout">
-          <!-- Sidebar -->
-          <nav class="app-sidebar">
-            <div class="sidebar-item">
-              <svg viewBox="0 0 24 24">
-                <rect x="3" y="3" width="7" height="7"></rect>
-                <rect x="14" y="3" width="7" height="7"></rect>
-                <rect x="3" y="14" width="7" height="7"></rect>
-                <rect x="14" y="14" width="7" height="7"></rect>
-              </svg>
-              모든 앱
-            </div>
-            <div class="sidebar-item">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="8" r="4"></circle>
-                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path>
-              </svg>
-              사진
-            </div>
-            <div class="sidebar-item active">
+        구조
+        1. app-header-area
+           - 상단 타이틀, 검색창, 정렬, 전체보기 링크
+           - 다크 배경 적용 예정
+
+        2. app-content-area
+           - 왼쪽 카테고리 메뉴 + 오른쪽 앱 카드 영역
+           - 밝은 배경 적용 예정
+
+        JS 연동
+        - app-card.js에서 앱 카드 데이터를 동적으로 생성
+        - 메뉴 클릭 시 카테고리 필터링
+        - 검색창 입력 시 앱명 검색
+        - pagination 버튼/dot 클릭 시 카테고리 순차 이동
+      -->
+      <section class="plan-main">
+        <!--
+          ===== 앱 둘러보기 상단 헤더 영역 =====
+          디자인 의도:
+          - 앱 탐색 영역의 상단 타이틀 역할
+          - 2번 참고 디자인처럼 이 영역에만 다크 배경 적용 가능
+
+          포함 요소:
+          - 섹션 제목
+          - 검색창
+          - 정렬 select
+          - 모든 앱 보러가기 링크
+        -->
+        <div class="app-header-area">
+          <div class="app-browse-header">
+            <!-- 섹션 제목 -->
+            <h2 class="contents-title">앱 둘러보기</h2>
+
+            <!--
+              앱 검색창 영역
+
+              JS 연동:
+              - app-card.js에서 input 값을 읽음
+              - 입력한 프로그램명과 일치하는 앱 카드만 표시
+            -->
+            <div class="search-bar">
+              <!-- 검색 아이콘 SVG -->
               <svg viewBox="0 0 24 24">
                 <path
-                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                  d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-linecap="round"
                 ></path>
               </svg>
+
+              <!-- 검색 입력창 -->
+              <input type="text" placeholder="앱 검색하기" />
+            </div>
+
+            <!--
+              앱 정렬 select 영역
+
+              현재 상태:
+              - HTML 구조만 있음
+              - 실제 정렬 기능은 JS 추가 시 작동 가능
+
+              옵션:
+              - 인기순
+              - 이름순
+              - 가격순
+            -->
+            <select class="sort-select">
+              <option>인기순</option>
+              <option>이름순</option>
+              <option>가격순</option>
+            </select>
+
+            <!-- 전체 앱 페이지로 이동하는 링크 -->
+            <a href="#" class="all-apps-link">모든 앱 보러가기 →</a>
+          </div>
+        </div>
+
+        <!--
+          ===== 앱 둘러보기 콘텐츠 영역 =====
+          디자인 의도:
+          - 상단 다크 영역 아래의 밝은 콘텐츠 영역
+          - 왼쪽 메뉴바와 오른쪽 카드 리스트를 나란히 배치
+
+          레이아웃:
+          [ app-sidebar ] [ app-card-area ]
+        -->
+        <div class="app-content-area">
+          <!--
+            ===== 왼쪽 앱 카테고리 메뉴 =====
+            디자인 의도:
+            - 2번 디자인처럼 흰색 배경과 그림자가 들어가는 메뉴 영역
+
+            JS 연동:
+            - 각 메뉴의 data-category 값을 기준으로 앱 카드 필터링
+            - active 클래스는 현재 선택된 메뉴 표시
+            - pagination dot과 같은 순서로 연동됨
+          -->
+          <nav class="app-sidebar">
+            <!-- 전체 앱 카테고리 -->
+            <div class="sidebar-item active" data-category="all">모든 앱</div>
+
+            <!-- 사진 관련 앱 카테고리 -->
+            <div class="sidebar-item" data-category="photo">사진</div>
+
+            <!-- 그래픽 디자인 관련 앱 카테고리 -->
+            <div class="sidebar-item" data-category="graphic">
               그래픽 디자인
             </div>
-            <div class="sidebar-item">
-              <svg viewBox="0 0 24 24">
-                <polygon points="5 3 19 12 5 21 5 3"></polygon>
-              </svg>
-              비디오
-            </div>
-            <div class="sidebar-item">
-              <svg viewBox="0 0 24 24">
-                <path d="M3 3h18v18H3z"></path>
-                <path d="M8 12h8M12 8v8"></path>
-              </svg>
+
+            <!-- 비디오 관련 앱 카테고리 -->
+            <div class="sidebar-item" data-category="video">비디오</div>
+
+            <!-- 일러스트레이션 관련 앱 카테고리 -->
+            <div class="sidebar-item" data-category="illustration">
               일러스트레이션
             </div>
-            <div class="sidebar-item">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-              </svg>
-              Acrobat 및 PDF
-            </div>
-            <div class="sidebar-item">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
-                ></path>
-              </svg>
-              3D 및 AR
-            </div>
-            <div class="sidebar-item">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                ></path>
-              </svg>
-              소셜미디어
-            </div>
+
+            <!-- PDF 관련 앱 카테고리 -->
+            <div class="sidebar-item" data-category="pdf">Acrobat 및 PDF</div>
+
+            <!-- 3D 및 AR 관련 앱 카테고리 -->
+            <div class="sidebar-item" data-category="3d">3D 및 AR</div>
+
+            <!-- 소셜미디어 관련 앱 카테고리 -->
+            <div class="sidebar-item" data-category="social">소셜미디어</div>
           </nav>
 
-          <!-- App cards -->
-          <div>
-            <div class="app-cards-grid">
-              <!-- Illustrator -->
-              <div class="app-card">
-                <div class="app-card-header">
-                  <div class="app-card-icon icon-ai">Ai</div>
-                  <h4>Illustrator</h4>
-                </div>
-                <p class="app-desc">
-                  데스크탑 및 iPad에서 세밀한 디자인, 일러스트레이션 및 벡터
-                  그래픽 제작
-                </p>
-                <div class="app-card-footer">
-                  <div class="app-price">₩30,800 <span>/월</span></div>
-                  <button class="add-btn">+</button>
-                </div>
-              </div>
+          <!--
+            ===== 오른쪽 앱 카드 영역 =====
+            디자인 의도:
+            - 앱 카드들이 나열되는 콘텐츠 영역
+            - 배경색 #fafafa 적용 예정
+            - 내부 카드는 흰색 카드 스타일
 
-              <!-- Adobe Express Premium -->
-              <div class="app-card">
-                <div class="app-card-header">
-                  <div class="app-card-icon icon-express">A</div>
-                  <h4>Adobe Express Premium</h4>
-                </div>
-                <p class="app-desc">
-                  새로워진 올인원 Adobe Express로 전단지, TikTok, 이력서, 팔줄
-                  디자인해 보세요.
-                </p>
-                <div class="app-card-footer">
-                  <div class="app-price">₩13,200 <span>/월</span></div>
-                  <button class="add-btn">+</button>
-                </div>
-              </div>
+            JS 연동:
+            - app-card.js가 .app-cards-grid 안에 app-card 요소를 동적으로 생성
+            - HTML에는 비워두는 것이 정상
+          -->
+          <div class="app-card-area">
+            <!--
+              앱 카드 렌더링 영역
 
-              <!-- Adobe Firefly Standard -->
-              <div class="app-card">
-                <div class="app-card-header">
-                  <div class="app-card-icon icon-firefly">Fi</div>
-                  <h4>Adobe Firefly Standard</h4>
-                </div>
-                <p class="app-desc">
-                  2,000개의 크레딧으로 영상, 오디오, 이미지를 빠르게 만들어
-                  보세요.
-                </p>
-                <div class="app-card-footer">
-                  <div class="app-price">₩11,000 <span>/월</span></div>
-                  <button class="add-btn">+</button>
-                </div>
-              </div>
+              중요:
+              - 이 div 안에 카드를 직접 작성하지 않음
+              - app-card.js가 선택된 카테고리/검색어에 맞게 카드를 생성함
+            -->
+            <div class="app-cards-grid"></div>
 
-              <!-- Adobe Firefly Pro -->
-              <div class="app-card">
-                <div class="app-card-header">
-                  <div class="app-card-icon icon-firefly">Fi</div>
-                  <h4>Adobe Firefly Pro</h4>
-                </div>
-                <p class="app-desc">
-                  웹과 모바일 등 어디서나 Adobe Photoshop으로 편집
-                </p>
-                <div class="app-card-footer">
-                  <div class="app-price">₩22,000 <span>/월</span></div>
-                  <button class="add-btn">+</button>
-                </div>
-              </div>
+            <!--
+              ===== 페이지네이션 / 카테고리 슬라이더 =====
+              역할:
+              - 하단 dot과 이전/다음 버튼으로 카테고리 이동
+              - 모든 앱 → 사진 → 그래픽 디자인 → 비디오 순서로 이동
 
-              <!-- Adobe Firefly Premium -->
-              <div class="app-card">
-                <div class="app-badge">50%</div>
-                <div class="app-card-header">
-                  <div class="app-card-icon icon-firefly">Fi</div>
-                  <h4>Adobe Firefly Premium</h4>
-                </div>
-                <p class="app-desc">
-                  50,000개의 크레딧으로 콘텐츠를 대규모로 만들어 보세요.
-                </p>
-                <div class="app-card-footer">
-                  <div class="app-price">₩114,950 <span>/월</span></div>
-                  <button class="add-btn">+</button>
-                </div>
-              </div>
-
-              <!-- Adobe Firefly Pro Plus -->
-              <div class="app-card">
-                <div class="app-badge">50%</div>
-                <div class="app-card-header">
-                  <div class="app-card-icon icon-firefly">Fi</div>
-                  <h4>Adobe Firefly Pro Plus</h4>
-                </div>
-                <p class="app-desc">
-                  50% 할인. 10,000개의 크레딧을 활용하여 콘텐츠의 완성도를
-                  높여보세요
-                </p>
-                <div class="app-card-footer">
-                  <div class="app-price">₩28,050 <span>/월</span></div>
-                  <button class="add-btn">+</button>
-                </div>
-              </div>
-
-              <!-- InDesign -->
-              <div class="app-card">
-                <div class="app-card-header">
-                  <div class="app-card-icon icon-indesign">Id</div>
-                  <h4>InDesign</h4>
-                </div>
-                <p class="app-desc">
-                  인쇄 및 디지털 미디어에 사용할 페이지 디자인 및 레이아웃 제작
-                </p>
-                <div class="app-card-footer">
-                  <div class="app-price">₩30,800 <span>/월</span></div>
-                  <button class="add-btn">+</button>
-                </div>
-              </div>
-
-              <!-- InCopy -->
-              <div class="app-card">
-                <div class="app-card-header">
-                  <div class="app-card-icon icon-incopy">Ic</div>
-                  <h4>InCopy</h4>
-                </div>
-                <p class="app-desc">
-                  디자인에 영향을 미치지 않고 텍스트 편집 및 레이아웃 수정
-                </p>
-                <div class="app-card-footer">
-                  <div class="app-price">₩6,600 <span>/월</span></div>
-                  <button class="add-btn">+</button>
-                </div>
-              </div>
-
-              <!-- Acrobat Standard -->
-              <div class="app-card">
-                <div class="app-card-header">
-                  <div class="app-card-icon icon-acrobat">Ac</div>
-                  <h4>Acrobat Standard</h4>
-                </div>
-                <p class="app-desc">
-                  간단한 PDF 툴로 문서를 손쉽게 편집하고 변환하세요.
-                </p>
-                <div class="app-card-footer">
-                  <div class="app-price">₩14,080 <span>/월</span></div>
-                  <button class="add-btn">+</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Pagination -->
+              JS 연동:
+              - prev-btn 클릭 시 이전 카테고리
+              - next-btn 클릭 시 다음 카테고리
+              - dots 영역에는 JS가 dot 요소를 자동 생성
+            -->
             <div class="pagination">
-              <button>‹</button>
-              <div class="dot active"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <button>›</button>
+              <!-- 이전 카테고리 이동 버튼 -->
+              <button class="prev-btn">‹</button>
+
+              <!--
+                dot 생성 영역
+
+                중요:
+                - HTML에서는 비워둠
+                - app-card.js에서 카테고리 개수만큼 dot 자동 생성
+              -->
+              <div class="dots"></div>
+
+              <!-- 다음 카테고리 이동 버튼 -->
+              <button class="next-btn">›</button>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ===== FOOTER (하단) ===== -->
+      <!--
+        ===== FOOTER : 하단 영역 =====
+        페이지 하단 정보 영역
+        혜택 배너, 고객센터 정보, 결제 수단, 소셜 링크, 법적 고지 포함
+      -->
       <footer class="plan-footer">
-        <!-- Benefits banner -->
+        <!--
+          ===== 혜택 배너 영역 =====
+          4개의 혜택 카드 표시
+          7일 무료 체험 / 안전한 결제 / 언제든지 취소 / 전문가 지원
+        -->
+        <!--
+  ===== 혜택 배너 영역 =====
+  하나의 긴 라운드 배너 안에 4개의 혜택 정보를 가로로 배치
+-->
         <div class="benefits-banner">
           <div class="benefits-grid">
+            <!-- 혜택 1 -->
             <div class="benefit-item">
-              <div class="benefit-icon">🗓️</div>
-              <h4>7일 무료 체험</h4>
-              <p>모든 플랜을 무료로 경험해보세요</p>
-              <button class="btn-detail">자세히 보기</button>
+              <div class="benefit-icon"><img src="asset/plan/Rectangle 37.png" alt=""></div>
+
+              <div class="benefit-text">
+                <h4>7일 무료 체험</h4>
+                <p>
+                  모든 플랜을<br />
+                  무료로 경험해보세요
+                </p>
+                <button class="btn-detail">자세히 보기</button>
+              </div>
             </div>
+
+            <!-- 혜택 2 -->
             <div class="benefit-item">
-              <div class="benefit-icon">🔒</div>
-              <h4>안전한 결제</h4>
-              <p>간편하고 안전한 결제 시스템</p>
-              <button class="btn-detail">자세히 보기</button>
+              <div class="benefit-icon"><img src="asset/plan/Rectangle 37-1.png" alt=""></div>
+
+              <div class="benefit-text">
+                <h4>안전한 결제</h4>
+                <p>
+                  간편하고 안전한<br />
+                  결제 시스템
+                </p>
+                <button class="btn-detail">자세히 보기</button>
+              </div>
             </div>
+
+            <!-- 혜택 3 -->
             <div class="benefit-item">
-              <div class="benefit-icon">🔄</div>
-              <h4>언제든지 취소</h4>
-              <p>위약금 없이 언제든지 취소 가능</p>
-              <button class="btn-detail">자세히 보기</button>
+              <div class="benefit-icon"><img src="asset/plan/Rectangle 37-3.png" alt=""></div>
+
+              <div class="benefit-text">
+                <h4>언제든지 취소</h4>
+                <p>
+                  위약금 없이<br />
+                  언제든지 취소 가능
+                </p>
+                <button class="btn-detail">자세히 보기</button>
+              </div>
             </div>
+
+            <!-- 혜택 4 -->
             <div class="benefit-item">
-              <div class="benefit-icon">👤</div>
-              <h4>전문가 지원</h4>
-              <p>도움이 필요할 때 언제나 지원</p>
-              <button class="btn-detail">자세히 보기</button>
+              <div class="benefit-icon"><img src="asset/plan/Rectangle 37-2.png" alt=""></div>
+
+              <div class="benefit-text">
+                <h4>전문가 지원</h4>
+                <p>
+                  도움이 필요할 때<br />
+                  언제든 지원
+                </p>
+                <button class="btn-detail">자세히 보기</button>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Footer bottom -->
+        <!--
+          ===== 푸터 하단 정보 영역 =====
+          고객센터/가격 안내/결제 수단/소셜/법적 링크 표시
+        -->
         <div class="footer-bottom">
+          <!-- 푸터 상단 행 -->
           <div class="footer-bottom-top">
+            <!-- 왼쪽 정보 영역 -->
             <div>
+              <!-- 전화 구매 및 가격 안내 문구 -->
               <div class="footer-contact">
                 전화로 구매: <strong>080-500-4019</strong><br />
                 *Adobe Stock의 플랜 가격은 <strong>₩39,600</strong>/월 (부가세
                 포함)입니다.<br />
                 모든 가격은 해당 지역에 적용되는 세금에 따라 달라집니다.
               </div>
+
+              <!-- 결제 수단 배지 영역 -->
               <div class="footer-payments">
                 <div class="security-badge">🔒</div>
                 <div class="payment-badge">LOTTE</div>
@@ -411,8 +447,12 @@
                 <div class="payment-badge">AMEX</div>
               </div>
             </div>
+
+            <!-- 오른쪽 로고 및 소셜 링크 영역 -->
             <div class="footer-right">
               <div class="footer-adobe-logo">Adobe</div>
+
+              <!-- 소셜 링크 영역 -->
               <div class="footer-social">
                 <a href="#">f</a>
                 <a href="#">○</a>
@@ -422,13 +462,18 @@
               </div>
             </div>
           </div>
+
+          <!-- 푸터 하단 행 -->
           <div class="footer-bottom-bottom">
+            <!-- 약관 및 개인정보 링크 -->
             <div class="footer-legal">
               <a href="#">개인정보 보호</a>
               <a href="#">사용 약관</a>
               <a href="#">쿠키 환경 설정</a>
               <a href="#">회사 약관</a>
             </div>
+
+            <!-- 저작권 표시 -->
             <div class="footer-copy">
               Copyright © 2026 Adobe. All rights reserved.
             </div>
@@ -437,8 +482,23 @@
       </footer>
     </div>
 
-    
+    <!--
+      ===== JS 파일 연결 =====
+      body 끝부분에 배치하여 HTML 요소가 먼저 로드된 뒤 JS가 실행되도록 함
+    -->
+
+    <!-- 추천 플랜 카드 관련 JS -->
+    <script src="js/plan/best-plan.js"></script>
+
+    <!--
+      앱 둘러보기 영역 관련 JS
+
+      기능:
+      - 앱 카드 동적 생성
+      - 왼쪽 메뉴 카테고리 필터
+      - 검색 기능
+      - 하단 dot / prev / next 슬라이더 기능
+    -->
+    <script src="js/plan/app-card.js"></script>
   </body>
-  <!-- js 연결 -->
-     <script src="js/plan/best-plan.js"></script>
 </html>

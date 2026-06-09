@@ -3,29 +3,30 @@ const programs = [
     name: "포토그래피",
     desc: "데스크탑, 웹, iPhone, iPad용 Photoshop, 1TB 클라우드 스토리지",
     salePrice: "₩46,860",
-    regularPrice: "₩00,000",
-    icon: "asset/program-icon/photoshop.png",
+    icons: ["asset/program-icon/photoshop.png", "asset/program-icon/lr.png"],
   },
   {
-    name: "Illustrator",
-    desc: "로고, 아이콘, 일러스트레이션, 그래픽 디자인을 제작하세요.",
+    name: "Photoshop",
+    desc: "그래픽, 사진, 아트웍 작업에 집중하시나요?",
     salePrice: "₩30,800",
-    regularPrice: "₩00,000",
-    icon: "asset/program-icon/illustrator.png",
-  },
-  {
-    name: "Premiere Pro",
-    desc: "영상 편집과 숏폼 콘텐츠 제작을 위한 전문 편집 앱입니다.",
-    salePrice: "₩30,800",
-    regularPrice: "₩00,000",
-    icon: "asset/program-icon/pr.png",
+    icon: "asset/program-icon/ps.png",
   },
   {
     name: "Acrobat Pro",
-    desc: "PDF 편집, 변환, 서명까지 문서 작업을 효율적으로 관리하세요.",
-    salePrice: "₩23,100",
-    regularPrice: "₩00,000",
+    desc: "학생 및 교사라면 <br><span class='strong'>최대 60% 할인!</span> <br><br> <span class='small'>학생, 교사, 교직원을 위한 특별할인을 이용해보세요</span>",
+    bgImage: "asset/plan/Plan-Card-bg.png",
+    buttonText: "무료 체험",
+    buttonType: "wide",
     icon: "asset/program-icon/acrobat.png",
+    noPrice: true,
+    hideLink: true,
+  },
+  {
+    name: "Adobe Firefly Pro Plus",
+    desc: "10,000개의 크레딧을 활용하여 콘텐츠의 완성도를 높여보세요.",
+    salePrice: "₩28,050",
+    regularPrice: "₩56,100",
+    icon: "asset/program-icon/fi.png",
   },
 ];
 
@@ -33,71 +34,74 @@ const cardsGrid = document.querySelector(".cards-grid");
 
 programs.forEach((program) => {
   const card = document.createElement("article");
-
   card.classList.add("program-card");
 
+  if (program.bgImage) {
+    card.classList.add("program-card--bg");
+    card.style.backgroundImage = `url(${program.bgImage})`;
+  }
+
+  const icons = program.icons || [program.icon];
+
   card.innerHTML = `
-    <div class="program-card_thumb">
-      <img src="${program.icon}" alt="${program.name}">
-    </div>
+    ${
+      icons[0]
+        ? `
+          <div class="program-card_thumb">
+            ${icons
+              .map(
+                (icon) => `
+                  <img src="${icon}" alt="${program.name}">
+                `,
+              )
+              .join("")}
+          </div>
+        `
+        : ""
+    }
 
     <div class="program-card_info">
       <h3 class="program-card_title">${program.name}</h3>
       <p class="program-card_desc">${program.desc}</p>
     </div>
 
-    <div class="program-card_price-area">
-      <p class="program-card_sale-price">
-        <strong>${program.salePrice}</strong>
-        <span>/월</span>
-      </p>
+    ${
+      program.noPrice
+        ? ""
+        : `
+          <div class="program-card_price-area">
+            <p class="program-card_sale-price">
+              <strong>${program.salePrice}</strong>
+              <span>/월</span>
+            </p>
 
-      <p class="program-card_regular-price">
-        정상가 <del>${program.regularPrice}</del><span>/월</span>
-      </p>
-    </div>
+            ${
+              program.regularPrice
+                ? `
+                  <p class="program-card_regular-price">
+                    정상가 <del>${program.regularPrice}</del><span>/월</span>
+                  </p>
+                `
+                : ""
+            }
+          </div>
+        `
+    }
 
     <div class="program-card_button-group">
-      <button type="button" class="program-card_button">
-        구매
-      </button>
+  <button type="button" class="program-card_button ${
+    program.buttonType === "wide" ? "program-card_button--wide" : ""
+  }">
+    ${program.buttonText || "구매"}
+  </button>
 
-      <a href="#" class="program-card_link">
-        자세히 보기
-      </a>
-    </div>
+  ${
+    program.hideLink
+      ? ""
+      : `<a href="#" class="program-card_link">자세히 보기</a>`
+  }
+</div>
   `;
 
   cardsGrid.appendChild(card);
 });
-
-      // User type button toggle
-      document.querySelectorAll(".user-type-btns button").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          document
-            .querySelectorAll(".user-type-btns button")
-            .forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
-        });
-      });
-
-      // Sidebar item toggle
-      document.querySelectorAll(".sidebar-item").forEach((item) => {
-        item.addEventListener("click", () => {
-          document
-            .querySelectorAll(".sidebar-item")
-            .forEach((i) => i.classList.remove("active"));
-          item.classList.add("active");
-        });
-      });
-
-      // Pagination dots
-      document.querySelectorAll(".dot").forEach((dot) => {
-        dot.addEventListener("click", () => {
-          document
-            .querySelectorAll(".dot")
-            .forEach((d) => d.classList.remove("active"));
-          dot.classList.add("active");
-        });
-      });
-    
