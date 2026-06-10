@@ -73,9 +73,26 @@ const apps = [
     iconClass: "icon-acrobat",
     category: ["all", "pdf"],
   },
+  {
+    name: "포토그래피",
+    desc: "데스크탑, 웹, iPhone, iPad용 Photoshop, 1TB 클라우드 스토리지",
+    price: "₩46,860",
+    icon: ["asset/program-icon/photoshop.png", "asset/program-icon/lr.png"],
+    iconClass: "icon-photography",
+    category: ["all", "photo"],
+  },
 ];
 
-const categories = ["all", "photo", "graphic", "video", "illustration", "pdf", "3d", "social"];
+const categories = [
+  "all",
+  "photo",
+  "graphic",
+  "video",
+  "illustration",
+  "pdf",
+  "3d",
+  "social",
+];
 
 const grid = document.querySelector(".app-cards-grid");
 const sidebarItems = document.querySelectorAll(".sidebar-item");
