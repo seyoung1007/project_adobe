@@ -70,10 +70,10 @@
     <link rel="stylesheet" href="css/footer.css" />
 
     <!-- JS -->
-    <script src="Js/main.js"></script>
+    <script src="js/main.js" defer></script>
+    
   </head>
   <body>
-    <!-- header -->
     <div class="wrap">
       <!-- HEADER -->
       <header class="header">
@@ -103,60 +103,62 @@
         </div>
       </header>
 
-      <!-- HERO -->
-      <section class="hero">
-        <div class="hero-bg">
-          <video
-            src="asset/mainpage/main-visual.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-          ></video>
+      <!--히어로 -->
+
+      <section class="mainhero" aria-label="히어로 섹션">
+        <!-- 배경 영상 자리 (실제 영상으로 교체) -->
+        <div class="hero-video-bg" aria-hidden="true">
+          <video class="hero-video" autoplay loop muted playsinline>
+            <source src="asset/mainpage/main-visual.mp4" type="video/mp4" />
+          </video>
         </div>
+
+        <!-- 메인 카피 -->
         <div class="hero-content">
-          <p class="hero-sub">ADOBE CREATIVE CLOUD</p>
-          <h1 class="hero-title">상상은 자유롭게,<br />창작은 더 강력하게.</h1>
-          <p class="hero-desc">
+          <p class="hero-eyebrow">Adobe Creative Cloud</p>
+          <h1 class="hero-title">
+            상상은 자유롭게,<br />
+            <em>창작은 더 강력하게</em><br />
+          </h1>
+          <p class="hero-sub">
             모든 앱 40% 이상 할인 혜택으로<br />지금바로 Creative Cloud를
             시작하세요.
           </p>
-          <div class="hero-btns">
+          <div class="mainhero-btns">
             <a href="#" class="btn-primary">무료 체험하기</a>
             <a href="#" class="btn-play"
               ><span class="play-icon">▶</span> 영상보기</a
             >
           </div>
+          <!-- HERO - FIREFLY -->
+          <div class="hero-firefly">
+            <div class="firefly-label">
+              <strong>PIRELFY AI</strong>
+              <p>상상한 이미지를<br />몇초만에 생성</p>
+              <span class="arrow">→</span>
+            </div>
+            <div class="firefly-imgs">
+              <span class="fi-img fi1"
+                ><img src="asset/mainpage/img/headerAi-1.png" alt=""
+              /></span>
+              <span class="fi-img fi2"
+                ><img src="asset/mainpage/img/headerAi-2.png" alt=""
+              /></span>
+              <span class="fi-img fi3"
+                ><img src="asset/mainpage/img/headerAi-3.png" alt=""
+              /></span>
+              <span class="fi-img fi4"
+                ><img src="asset/mainpage/img/headerAi-4.png" alt=""
+              /></span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- HERO - FIREFLY -->
-      <div class="hero-firefly">
-        <div class="firefly-label">
-          <strong>PIRELFY AI</strong>
-          <p>상상한 이미지를<br />몇초만에 생성</p>
-          <span class="arrow">→</span>
-        </div>
-        <div class="firefly-imgs">
-          <span class="fi-img fi1"
-            ><img src="asset/mainpage/img/headerAi-1.png" alt=""
-          /></span>
-          <span class="fi-img fi2"
-            ><img src="asset/mainpage/img/headerAi-2.png" alt=""
-          /></span>
-          <span class="fi-img fi3"
-            ><img src="asset/mainpage/img/headerAi-3.png" alt=""
-          /></span>
-          <span class="fi-img fi4"
-            ><img src="asset/mainpage/img/headerAi-4.png" alt=""
-          /></span>
-        </div>
-      </div>
-
       <!-- 툴 소개 -->
       <section class="solution">
-        <div class="solution-inner h-inner">
-          <!-- 왼쪽 -->
+        <div class="h-inner">
+          <!-- 툴 소개 - 타이틀 -->
           <div class="solution-title">
             <h2>
               창의적인<br />
@@ -219,7 +221,7 @@
 
       <!-- SECTION : Firefly AI -->
       <section class="firefly">
-        <div class="firefly-inner h-inner">
+        <div class="h-inner">
           <!-- 왼쪽 -->
           <div class="firefly-left">
             <video autoplay muted loop playsinline class="bg-video">
@@ -282,7 +284,7 @@
 
       <!-- SECTION : plan -->
       <section class="plan">
-        <div class="plan-inner h-inner">
+        <div class="h-inner">
           <!-- 왼쪽 텍스트 -->
           <div class="plan-title">
             <h2>
@@ -298,67 +300,103 @@
           </div>
 
           <!-- 카드 영역 -->
-          <div class="plan-container">
-            <!-- 카드 1 -->
-            <div class="plan-list">
-              <span class="plan-type">개인</span>
 
-              <h3>모든 앱</h3>
-
-              <div class="home-price">
-                <p class="price-w">₩39,000</p>
-                <span>/ 월</span>
-              </div>
-
-              <p class="plan-listP">
-                모든 Creative Cloud 앱 사용 <br />
-                Adobe Firefly 포함 <br />
-                100GB 클라우드 저장소
-              </p>
-
-              <a href="#" class="plan-btn">구매하기</a>
+          <div class="plans-grid">
+            <!-- 개인 -->
+            <div class="plan-card">
+              <div class="plan-badge">개인</div>
+              <div class="plan-type">Creative Cloud 전체</div>
+              <div class="plan-who">개인 사용자를 위한 사용료</div>
+              <div class="plan-price-old">₩ 48,000 / 월</div>
+              <div class="plan-price">₩ 30,000 <span>/ 월</span></div>
+              <div class="plan-vat">부가세 포함</div>
+              <hr class="plan-divider" />
+              <ul class="plan-features" aria-label="개인 플랜 포함 항목">
+                <li>
+                  <i class="ti ti-check" aria-hidden="true"></i>모든 Creative
+                  Cloud 앱 사용
+                </li>
+                <li>
+                  <i class="ti ti-check" aria-hidden="true"></i>100GB 클라우드
+                  스토리지
+                </li>
+                <li>
+                  <i class="ti ti-check" aria-hidden="true"></i>Adobe Fonts 포함
+                </li>
+                <li>
+                  <i class="ti ti-check" aria-hidden="true"></i>Adobe Express
+                  포함
+                </li>
+              </ul>
+              <button class="plan-btn">구매하기</button>
             </div>
 
-            <!-- 카드 2 -->
-            <div class="plan-list active">
-              <span class="best">추천</span>
-
-              <span class="plan-type">학생 및 교사</span>
-
-              <h3>모든 앱</h3>
-
-              <div class="price">
-                <p class="price-w">₩26,400</p>
-                <span>/ 월</span>
-              </div>
-
-              <p class="plan-listP">
-                모든 Creative Cloud 앱 사용 <br />
-                Adobe Firefly 포함 <br />
-                Adobe Fonts 무료
-              </p>
-
-              <a href="#" class="plan-btn">구매하기</a>
+            <!-- 학생 (featured) -->
+            <div class="plan-card featured" aria-label="추천 플랜">
+              <div class="plan-badge student">🎓 학생 · 교사 최저가</div>
+              <div class="plan-type">Creative Cloud 전체</div>
+              <div class="plan-who">학생임을 고지하시면</div>
+              <div class="plan-price-old">₩ 99,000 / 월</div>
+              <div class="plan-price">₩ 29,800 <span>/ 월</span></div>
+              <div class="plan-vat">부가세 포함</div>
+              <hr class="plan-divider" />
+              <ul class="plan-features" aria-label="학생 플랜 포함 항목">
+                <li>
+                  <i class="ti ti-check green" aria-hidden="true"></i>모든
+                  Creative Cloud 앱 사용
+                </li>
+                <li>
+                  <i class="ti ti-check green" aria-hidden="true"></i>100GB
+                  클라우드 스토리지
+                </li>
+                <li>
+                  <i class="ti ti-check green" aria-hidden="true"></i>Adobe
+                  Fonts 포함
+                </li>
+                <li>
+                  <i class="ti ti-check green" aria-hidden="true"></i>Adobe
+                  Portfolio 포함
+                </li>
+                <li>
+                  <i class="ti ti-check green" aria-hidden="true"></i
+                  ><strong>70% 할인 혜택</strong>
+                </li>
+              </ul>
+              <button class="plan-btn featured-btn">구매하기</button>
             </div>
 
-            <!-- 카드 3 -->
-            <div class="plan-list">
-              <span class="plan-type">기업</span>
-
-              <h3>팀용 Creative Cloud Pro</h3>
-
-              <div class="price">
-                <p class="price-w">₩72,800</p>
-                <span>/ 월</span>
-              </div>
-
-              <p class="plan-listP">
-                모든 Creative Cloud 앱 사용 <br />
-                Adobe Firefly 포함 <br />
-                Adobe Express 포함
-              </p>
-
-              <a href="#" class="plan-btn">구매하기</a>
+            <!-- 기업 -->
+            <div class="plan-card">
+              <div class="plan-badge biz">기업</div>
+              <div class="plan-type">Creative Cloud for Teams</div>
+              <div class="plan-who">2인 이상 비즈니스 환경</div>
+              <div class="plan-price-old">₩ 99,000 / 월</div>
+              <div class="plan-price">₩ 29,800 <span>/ 월 / 사용자</span></div>
+              <div class="plan-vat">부가세 포함</div>
+              <hr class="plan-divider" />
+              <ul class="plan-features" aria-label="기업 플랜 포함 항목">
+                <li>
+                  <i class="ti ti-check purple" aria-hidden="true"></i>모든
+                  Creative Cloud 앱 사용
+                </li>
+                <li>
+                  <i class="ti ti-check purple" aria-hidden="true"></i>1TB
+                  클라우드 스토리지
+                </li>
+                <li>
+                  <i class="ti ti-check purple" aria-hidden="true"></i>Adobe
+                  Fonts 포함
+                </li>
+                <li>
+                  <i class="ti ti-check purple" aria-hidden="true"></i>팀
+                  라이선스 관리
+                </li>
+                <li>
+                  <i class="ti ti-check purple" aria-hidden="true"></i>24/7 전담
+                  지원
+                </li>
+              </ul>
+              <button class="plan-btn purple-btn">구매하기</button>
             </div>
           </div>
 
@@ -642,7 +680,6 @@
       </div>
     </footer>
 
-    
     <!-- 세영 - 끝 -->
   </body>
 </html>
