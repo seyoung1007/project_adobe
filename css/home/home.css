@@ -1,14 +1,12 @@
 @import url(home_header.css);
 @import url(home_main.css);
-@import url(home_footer.css);
 @import url(home_reponsive.css);
 
 .wrap{
     margin: 0 auto;
 }
 
-  html,
-  body {
+body {
     overflow-x: hidden;
   }
   

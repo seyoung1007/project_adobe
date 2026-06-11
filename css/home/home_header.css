@@ -50,7 +50,7 @@
 
 .gnb ul li a {
   color: white;
-  font-size: clamp(12px, 1vw, 16px);
+  font-size: var(--fs-app-price-unit);
   white-space: nowrap;
 }
 
@@ -64,7 +64,7 @@
 
 .btn-login {
   color: white;
-  font-size: clamp(10px, 2vw, 14px);
+  font-size: var(--fs-app-price-unit);
   padding: 7px 16px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 20px;
@@ -80,7 +80,7 @@
   white-space: nowrap;
   background: var(--red);
   color: #fff;
-  font-size: clamp(10px, 2vw, 14px);
+  font-size: var(--fs-app-price-unit);
   padding: 7px 16px;
   border-radius: 20px;
   transition: background 0.2s;
@@ -101,8 +101,6 @@
   justify-content: center;
 }
 
-
-
 /* 중앙 콘텐츠 - 버튼 */
 .mainhero-btns {
   display: flex;
@@ -117,7 +115,7 @@
   padding: 12px 28px;
   background: #fff;
   color: #000;
-  font-size: 15px;
+  font-size: var(--fs-program-link);
   font-weight: bold;
   border-radius: 50px;
   transition:
@@ -134,9 +132,8 @@
   align-items: center;
   gap: 8px;
   color: #fff;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
+  font-size: var(--fs-program-link);
+  font-weight: bold;
   transition: opacity 0.2s;
 }
 
@@ -152,7 +149,7 @@
   height: 32px;
   border: 1.5px solid rgba(255, 255, 255, 0.7);
   border-radius: 50%;
-  font-size: 11px;
+  font-size: var(--fs-app-desc);
 }
 
 /* Firefly AI 영역 (하단 왼쪽) */
@@ -165,7 +162,6 @@
   display: flex;
   align-items: center;
   gap: 24px;
-
 }
 
 .firefly-label {
@@ -177,19 +173,19 @@
 }
 
 .firefly-label strong {
-  font-size: clamp(10px, 1vw, 15px);
-font-weight: bold;
+  font-size: var(--fs-program-link);
+  font-weight: bold;
   letter-spacing: 0.08em;
   color: #fff;
 }
 
 .firefly-label p {
-  font-size: clamp(8px, 1vw, 12px);
+  font-size: var(--fs-app-desc);
   color: #fff;
 }
 
 .firefly-label .arrow {
-  font-size: clamp(10px, 1vw, 15px);
+  font-size: var(--fs-program-link);
   color: #fff;
   margin-top: 2px;
 }
@@ -202,11 +198,11 @@ font-weight: bold;
 }
 
 .fi-img {
-  display: block;
   width: 80px;
   height: 80px;
   border-radius: 10px;
   overflow: hidden;
+  display: block;
 }
 
 .fi-img img {

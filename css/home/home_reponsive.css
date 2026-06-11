@@ -1,5 +1,119 @@
+@media (max-width: 1024px) {
+  /* 툴 소개  */
+  .solution .h-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .solution-title {
+    width: 100%;
+  }
+  .solution-title h2 {
+    font-size: var(--tablet780px---visual-title--m);
+  }
+  .solution-title p {
+    font-size: var(--tablet780px---visual--desc--m);
+    margin: 0;
+    position: relative;
+    padding-bottom: 80px;
+  }
+
+  .solution-btn {
+    margin-left: auto;
+    position: absolute;
+    right: 18px;
+    top: 295px;
+    z-index: 999;
+  }
+  .solution-btn a {
+    font-size: var(--tablet780px--button--m);
+  }
+  .solution-category {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-bottom: 4px;
+    order: 2;
+    justify-content: center;
+    overflow-x: unset;
+    scrollbar-width: none;
+  }
+
+  .solution-category::-webkit-scrollbar {
+    display: none;
+  }
+
+  .solution-category a {
+    flex-shrink: 0;
+    height: 36px;
+    font-size: var(--tablet780px--button--m);
+    padding: 0 14px;
+    white-space: nowrap;
+  }
+
+  .solution-cards {
+    width: 100%;
+    min-width: unset;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    order: 3;
+  }
+
+  .sol-card {
+    min-height: 140px;
+  }
+  .sol-card:nth-child(1) {
+    transform: rotate(-1.5deg);
+  }
+  .sol-card:nth-child(2) {
+    transform: rotate(1deg);
+  }
+  .sol-card:nth-child(3) {
+    transform: rotate(-1deg);
+  }
+  .sol-card:nth-child(4) {
+    transform: rotate(1deg);
+  }
+  .sol-card:nth-child(5) {
+    transform: rotate(-1deg);
+  }
+  .sol-card:nth-child(6) {
+    transform: rotate(1.5deg);
+  }
+
+  .sol-card h3 {
+    font-size: var(--tablet780px---card-title--m);
+  }
+
+  .sol-card p {
+    font-size: var(--tablet780px---card--desc--m);
+  }
+  /*  플랜 */
+  .plan .h-inner {
+    flex-wrap: wrap;
+  }
+
+  .plan-title {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .plan .plans-grid {
+    width: 100%;
+  }
+
+  .plan-more {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .plan-card {
+    flex: 1 1 calc(50% - 12px);
+  }
+}
+
 @media (max-width: 780px) {
-  /* ===== Header ===== */
   .header-inner {
     height: 60px;
     padding: 0 12px;
@@ -30,7 +144,6 @@
 
   /* ===== Hero ===== */
 
- 
   .mainhero-btns {
     flex-direction: column;
     gap: 20px;
@@ -42,11 +155,11 @@
     width: 100%;
     max-width: 180px;
     text-align: center;
-    font-size: 14px;
+    font-size: var(--fs-card-caption);
     padding: 13px 28px;
   }
   .btn-play {
-    font-size: 13px;
+    font-size: var(--fs-card-caption);
   }
 
   .hero-firefly {
@@ -56,92 +169,6 @@
     align-items: center;
   }
 
- /* 툴 소개  */
-.solution .h-inner {
-  flex-direction: column;  /* ← 이게 빠져있어요! */
-  align-items: flex-start;
-}
-
-
-  .solution-title {
-    width: 100%;
-  }
-  .solution-title h2 {
-    font-size: 28px;
-  }
-  .solution-title p {
-    font-size: 14px;
-    margin: 0;
-    position: relative;
-    padding-bottom: 80px;
-  }
-
-  .solution-btn {
-    margin-left: auto;
-    position: absolute;
-    right: 18px;
-    top: 295px;
-    z-index: 999;
-  }
-
-
-  .solution-category {
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding-bottom: 4px;
-    order: 2;
-    justify-content: center;
-    overflow-x: unset;
-    scrollbar-width: none;
-  }
-
-  .solution-category::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .solution-category a {
-    flex-shrink: 0;
-    height: 36px;
-    font-size: 13px;
-    padding: 0 14px;
-    white-space: nowrap;
-  }
-
-  .solution-cards {
-  width: 100%;
-  min-width: unset;
-  grid-template-columns: repeat(3, 1fr); /* 3열 고정 → 2행 */
-  gap: 14px;
-  order: 3;
-  }
-
-  .sol-card {
-    min-height: 140px;
-  }
-  .sol-card:nth-child(1) {
-    transform: rotate(-1.5deg);
-  }
-  .sol-card:nth-child(2) {
-    transform: rotate(1deg);
-  }
-  .sol-card:nth-child(3) {
-    transform: rotate(-1deg);
-  }
-  .sol-card:nth-child(4) {
-    transform: rotate(1deg);
-  }
-  .sol-card:nth-child(5) {
-    transform: rotate(-1deg);
-  }
-  .sol-card:nth-child(6) {
-    transform: rotate(1.5deg);
-  }
-
-
-  /* AI 툴 기능 소개  */
-  
   .firefly-label {
     min-width: unset;
     width: 100px;
@@ -149,12 +176,13 @@
   }
 
   .firefly-label strong {
-    font-size: 14px;
+    font-size: var(--fs-card-caption);
     word-break: keep-all;
   }
 
   .firefly-label p {
-    font-size: 12px;
+    font-size: var(--fs-card-caption);
+
     word-break: keep-all;
   }
 
@@ -170,10 +198,8 @@
   }
 
   /* firefly  */
-  .firefly-inner {
-    flex-direction: column;
-    gap: 24px;
-    padding: 20px 16px;
+  .firefly .h-inner {
+    display: block;
   }
 
   /* ===== LEFT ===== */
@@ -188,32 +214,35 @@
   }
 
   .firefly-content h2 {
-    font-size: 28px;
+    font-size: var(--tablet780px---visual-title--m);
     margin-bottom: 16px;
   }
 
   .firefly-content p {
-    font-size: 14px;
+    font-size: var(--tablet780px---visual--desc--m);
     margin-bottom: 24px;
   }
 
   .detail-btn {
-    font-size: 14px;
+    font-size: var(--tablet780px--button--m);
     padding: 10px 22px;
   }
 
   /* ===== RIGHT ===== */
   .firefly-right {
+    padding-top: 20px;
     min-height: unset;
     gap: 24px;
+    padding: 20px 30px;
   }
 
   .right-top h3 {
-    font-size: 20px;
+    font-size: var(--tablet780px---visual-title--m);
+    margin: 0;
   }
 
   .right-top p {
-    font-size: 13px;
+    font-size: var(--tablet780px---contents--desc);
   }
 
   /* 카드 3열 유지, 넘치면 1열 */
@@ -227,35 +256,97 @@
   }
 
   .firefly-card h4 {
-    font-size: 13px;
+    font-size: var(--tablet780px---contents--des);
     padding: 10px 10px 6px;
   }
 
   .firefly-card p {
-    font-size: 12px;
+    font-size: var(--tablet780px---contents--desc--m);
     padding: 0 10px 14px;
   }
 
   .firefly-btn {
-    font-size: 14px;
+    font-size: var(--tablet780px--button--m);
     padding: 10px 22px;
     margin-left: auto; /* 오른쪽 정렬 */
     display: flex;
   }
 
+  /* 플랜 */
+
+  .plan .h-inner {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .plan-title {
+    width: 100%;
+    max-width: 100%;
+    font-size: var(--tablet780px---visual-title--m);
+  }
+  .plan-title h2 {
+    font-size: var(--tablet780px---visual-title--m);
+  }
+  .plan-title p {
+    font-size: var(--tablet780px---visual--desc--m);
+  }
+  .plan .plans-grid {
+    width: 100%;
+    order: 3;
+  }
+
+  .plan .plan-card {
+    flex: 1 1 calc(50% - 12px);
+  }
+  .plan-more {
+    width: 100%;
+    order: 3;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 550px) {
+  .plan {
+    padding: 40px 0;
+  }
+
+  .plan .h-inner {
+    gap: 20px;
+  }
+
+  .plan .plans-grid {
+    gap: 12px;
+  }
+
+  .plan .plan-card {
+    flex: 1 1 100%;
+    min-width: 60%;
+  }
+
+  .plan .plan-btn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 390px) {
+  /* hero  */
 
   .btn-join {
     display: none;
   }
+  .mainhero .hero-title {
+    font-size: var(--mobile390px---visual-title--s);
+  }
 
+  .mainhero .hero-content {
+    position: absolute;
+    top: 15%;
+  }
 
   .btn-primary {
     width: calc(100% - 40px); /* 좌우 여백 20px씩 */
     max-width: 100%;
-    font-size: 15px;
+    font-size: var(--fs-card-caption);
     padding: 14px 0;
   }
 
@@ -266,22 +357,40 @@
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 50px;
     padding: 8px 0;
-    font-size: 15px;
+    font-size: var(--fs-card-caption);
   }
 
   /* ===== Firefly AI (하단) ===== */
   .hero-firefly {
-    flex-direction: column; /* 세로 배치 */
-    align-items: center;
-    text-align: center;
-    gap: 14px;
-    width: calc(100% - 32px);
     position: absolute;
-    bottom: 130px;
+
+    top: auto;
+    bottom: -200px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .firefly-label {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .firefly-imgs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
   }
 
   .fi-img {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
   }
 }
