@@ -1,11 +1,9 @@
 /* plan_responsive.css */
 
-
 /* ================================================================
    1080px ~ 769px  |  Tablet
    ================================================================ */
 @media (max-width: 1080px) and (min-width: 769px) {
-
   /* ----------------------------------------------------------
      HEADER
   ---------------------------------------------------------- */
@@ -18,7 +16,6 @@
   ---------------------------------------------------------- */
   .visual-title h1 {
     font-size: clamp(28px, 3.5vw, 40px);
-    margin-top: 80px;
     padding: 0 40px;
   }
 
@@ -54,12 +51,21 @@
     padding: 12px 0 24px;
     overflow-x: auto;
     overflow-y: hidden;
+    scrollbar-width: thin;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
   }
 
   .cards-grid::-webkit-scrollbar {
-    display: none;
+    height: 8px;
+  }
+  .cards-grid::-webkit-scrollbar-track {
+    background: #e5e5e5;
+    border-radius: 999px;
+  }
+  .cards-grid::-webkit-scrollbar-thumb {
+    background: #8b8b8b;
+    border-radius: 999px;
   }
 
   .program-card {
@@ -119,7 +125,7 @@
   ---------------------------------------------------------- */
   .app-content-area {
     grid-template-columns: 160px 1fr;
-    padding: 28px 28px 36px 0;   /* padding-left: 0 → 사이드바 좌측 벽 고정 */
+    padding: 28px 28px 36px 0; /* padding-left: 0 → 사이드바 좌측 벽 고정 */
     gap: 20px;
   }
 
@@ -127,7 +133,7 @@
   .app-sidebar {
     min-height: unset;
     padding-top: 16px;
-    margin-top: -28px;           /* app-header-area padding 값과 맞춤 */
+    margin-top: -28px; /* app-header-area padding 값과 맞춤 */
   }
 
   .sidebar-item {
@@ -189,12 +195,12 @@
      FOOTER : footer-bottom
   ---------------------------------------------------------- */
   .footer-bottom {
+    gap: 40px;
     padding: 24px 28px;
   }
 
-  .footer-bottom-top {
-    flex-wrap: wrap;
-    gap: 20px;
+  .footer-left {
+    flex: 1;
   }
 
   .footer-contact {
@@ -203,36 +209,48 @@
   }
 
   .footer-payments {
-    flex-wrap: wrap;
     gap: 6px;
     margin-top: 10px;
   }
 
-  .footer-right {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  .payment-badge {
+    height: 24px;
+    min-width: 38px;
+    padding: 3px 7px;
   }
 
-  .footer-bottom-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+  .payment-badge img {
+    height: 13px;
+    max-width: 64px;
+  }
+
+  .security-badge {
+    width: 24px;
+    height: 24px;
+  }
+
+  .footer-right {
+    width: 300px;
+    gap: 16px;
+  }
+
+  .footer-social {
+    gap: 10px;
   }
 
   .footer-legal {
-    flex-wrap: wrap;
     gap: 8px 14px;
   }
-}
 
+  .footer-copy {
+    font-size: 11px;
+  }
+}
 
 /* ================================================================
    768px ~ 391px  |  Mobile
    ================================================================ */
 @media (max-width: 768px) and (min-width: 391px) {
-
   /* ----------------------------------------------------------
      HEADER
   ---------------------------------------------------------- */
@@ -293,11 +311,21 @@
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
     -webkit-overflow-scrolling: touch;
   }
 
   .cards-grid::-webkit-scrollbar {
-    display: none;
+    height: 8px;
+  }
+  .cards-grid::-webkit-scrollbar-track {
+    background: #e5e5e5;
+    border-radius: 999px;
+  }
+
+  .cards-grid::-webkit-scrollbar-thumb {
+    background: #8b8b8b;
+    border-radius: 999px;
   }
 
   .program-card {
@@ -493,13 +521,15 @@
      FOOTER : footer-bottom
   ---------------------------------------------------------- */
   .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+
     padding: 24px 24px;
   }
 
-  .footer-bottom-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+  .footer-left {
+    width: 100%;
   }
 
   .footer-contact {
@@ -508,16 +538,44 @@
   }
 
   .footer-payments {
-    flex-wrap: wrap;
     gap: 6px;
     margin-top: 10px;
   }
 
+  .payment-badge {
+    height: 23px;
+    min-width: 36px;
+    padding: 3px 7px;
+  }
+
+  .payment-badge img {
+    height: 12px;
+    max-width: 60px;
+  }
+
+  .security-badge {
+    width: 23px;
+    height: 23px;
+  }
+
+  .security-badge img {
+    height: 12px;
+  }
+
   .footer-right {
+    width: 100%;
+    gap: 16px;
+  }
+
+  .footer-brand {
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+  }
+
+  .footer-social {
+    gap: 10px;
   }
 
   .footer-social a {
@@ -525,14 +583,7 @@
     height: 28px;
   }
 
-  .footer-bottom-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
   .footer-legal {
-    flex-wrap: wrap;
     gap: 8px 12px;
   }
 
@@ -541,12 +592,10 @@
   }
 }
 
-
 /* ================================================================
    390px 이하  |  Small Mobile
    ================================================================ */
 @media (max-width: 390px) {
-
   /* ----------------------------------------------------------
      HEADER
   ---------------------------------------------------------- */
@@ -943,13 +992,15 @@
      FOOTER : footer-bottom
   ---------------------------------------------------------- */
   .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+
     padding: 20px 20px;
   }
 
-  .footer-bottom-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+  .footer-left {
+    width: 100%;
   }
 
   .footer-contact {
@@ -958,25 +1009,40 @@
   }
 
   .footer-payments {
-    flex-wrap: wrap;
     gap: 5px;
     margin-top: 10px;
   }
 
   .payment-badge {
-    font-size: 10px;
+    height: 22px;
+    min-width: 34px;
     padding: 2px 6px;
   }
 
+  .payment-badge img {
+    height: 11px;
+    max-width: 54px;
+  }
+
   .security-badge {
-    font-size: 11px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .security-badge img {
+    height: 11px;
   }
 
   .footer-right {
+    width: 100%;
+    gap: 14px;
+  }
+
+  .footer-brand {
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
   }
 
   .footer-adobe-logo {
@@ -993,15 +1059,7 @@
     font-size: 11px;
   }
 
-  .footer-bottom-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    padding-top: 14px;
-  }
-
   .footer-legal {
-    flex-wrap: wrap;
     gap: 8px 10px;
   }
 
@@ -1011,6 +1069,5 @@
 
   .footer-copy {
     font-size: 10px;
-    color: #aaa;
   }
 }
