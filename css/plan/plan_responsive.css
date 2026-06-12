@@ -131,7 +131,8 @@
 
   /* 사이드바: PC 구조 그대로, 너비만 160px로 축소 */
   .app-sidebar {
-    min-height: unset;
+    height: 100%;
+    min-height: 420px;
     padding-top: 16px;
     margin-top: -28px; /* app-header-area padding 값과 맞춤 */
   }
@@ -227,23 +228,6 @@
   .security-badge {
     width: 24px;
     height: 24px;
-  }
-
-  .footer-right {
-    width: 300px;
-    gap: 16px;
-  }
-
-  .footer-social {
-    gap: 10px;
-  }
-
-  .footer-legal {
-    gap: 8px 14px;
-  }
-
-  .footer-copy {
-    font-size: 11px;
   }
 }
 
@@ -388,54 +372,57 @@
     padding: 0 24px 32px 24px;
   }
 
-  /* 사이드바: 768px부터 가로 슬라이드가 아닌 버튼형 wrap */
+  /* 사이드바: 768px 구간에서만 참고 이미지처럼 아이콘 + 텍스트가 줄바꿈되는 구조 */
   .app-sidebar {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    overflow: visible;
-    min-height: unset;
-    height: auto;
-    margin-top: 0;
-    margin-left: 0;
     width: 100%;
-    padding: 16px 0;
-    gap: 8px;
-    box-shadow: none;
-    border-radius: 0;
-    border-bottom: 1px solid #e8e8e8;
+    display: grid;
+    margin-top: 0;
+    grid-template-columns: repeat(4, 1fr);
+
+    column-gap: 12px;
+    row-gap: 20px;
+
+    padding: 24px 0;
+    min-height: auto;
+    height: auto;
   }
 
   .sidebar-item {
-    flex: 0 0 auto;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 16px;
-    border-radius: 20px;
+
+    gap: 8px;
+
+    font-size: 11px; /* 기존 13px → 11px */
     white-space: nowrap;
-    font-size: 13px;
+
+    padding: 0;
+    min-width: 0;
   }
 
   .sidebar-item::before {
     content: "";
-    display: inline-block;
-    width: 1.15em;
-    height: 1.15em;
-    flex-shrink: 0;
+
+    width: 24px; /* 기존 32~40px → 24px */
+    height: 24px;
+
+    flex: 0 0 24px;
+
+    /* background: #d9d9d9; */
   }
 
-  .sidebar-item:hover {
-    background: #eeeeee;
-    color: #111;
-    border-radius: 20px;
+  /* .sidebar-item:hover,
+  .sidebar-item.active {
+    background: transparent;
+    color: #222;
+    border-radius: 0;
   }
 
   .sidebar-item.active {
-    background: #8b8b8b;
-    color: #fff;
-    border-radius: 20px;
-  }
+    background: transparent;
+    color: #222;
+    border-radius: 0;
+  } */
 
   /* 카드 영역 */
   .app-card-area {
@@ -562,33 +549,9 @@
     height: 12px;
   }
 
-  .footer-right {
-    width: 100%;
-    gap: 16px;
-  }
-
-  .footer-brand {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer-social {
-    gap: 10px;
-  }
-
-  .footer-social a {
-    width: 28px;
-    height: 28px;
-  }
-
-  .footer-legal {
-    gap: 8px 12px;
-  }
-
-  .footer-copy {
-    font-size: 11px;
+  .footer__right {
+    align-items: flex-start;
+    /* width: 100%; */
   }
 }
 
@@ -607,6 +570,7 @@
      PLAN-UPPER : 비주얼 타이틀
   ---------------------------------------------------------- */
   .visual-title h1 {
+    margin-top: 100px;
     font-size: 22px;
     /* margin-top: 48px; */
     padding: 0 20px;
@@ -1024,6 +988,10 @@
     max-width: 54px;
   }
 
+  .footer__right {
+    align-items: flex-start;
+  }
+
   .security-badge {
     width: 22px;
     height: 22px;
@@ -1031,22 +999,6 @@
 
   .security-badge img {
     height: 11px;
-  }
-
-  .footer-right {
-    width: 100%;
-    gap: 14px;
-  }
-
-  .footer-brand {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer-adobe-logo {
-    font-size: 18px;
   }
 
   .footer-social {
@@ -1057,17 +1009,5 @@
     width: 26px;
     height: 26px;
     font-size: 11px;
-  }
-
-  .footer-legal {
-    gap: 8px 10px;
-  }
-
-  .footer-legal a {
-    font-size: 11px;
-  }
-
-  .footer-copy {
-    font-size: 10px;
   }
 }
