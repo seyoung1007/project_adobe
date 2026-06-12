@@ -89,7 +89,9 @@
   .sol-card p {
     font-size: var(--tablet780px---card--desc--m);
   }
+
   /*  플랜 */
+
   .plan .h-inner {
     flex-wrap: wrap;
   }
@@ -119,9 +121,7 @@
     padding: 0 12px;
     gap: 0;
   }
-  .gnb {
-    display: none;
-  }
+
   .menu-btn {
     display: flex;
     flex-direction: column;
@@ -144,10 +144,35 @@
 
   /* ===== Hero ===== */
 
-  .mainhero-btns {
+  .hero {
+    min-height: 100dvh;
+    justify-content: flex-start;
+    padding-top: 185px;
+    overflow: visible; /* firefly 잘림 방지 */
+  }
+  .hero-content {
+    gap: 12px;
+    padding: 0 20px;
+  }
+  .hero-sub {
+    font-size: 20px;
+  }
+  .hero-title {
+    font-size: clamp(40px, 2vw, 50px);
+    line-height: 1.25;
+    margin-bottom: 12px;
+    word-break: keep-all;
+  }
+  .hero-desc {
+    font-size: clamp(20px, 2vw, 12px);
+    line-height: 1.6;
+    margin-bottom: 10px;
+    word-break: keep-all;
+  }
+  .hero-btns {
     flex-direction: column;
-    gap: 20px;
     margin-top: 4px;
+    gap: 5px;
     width: 100%;
     align-items: center;
   }
@@ -155,11 +180,11 @@
     width: 100%;
     max-width: 180px;
     text-align: center;
-    font-size: var(--fs-card-caption);
+    font-size: 14px;
     padding: 13px 28px;
   }
   .btn-play {
-    font-size: var(--fs-card-caption);
+    font-size: 13px;
   }
 
   .hero-firefly {
@@ -176,13 +201,12 @@
   }
 
   .firefly-label strong {
-    font-size: var(--fs-card-caption);
+    font-size: 14px;
     word-break: keep-all;
   }
 
   .firefly-label p {
-    font-size: var(--fs-card-caption);
-
+    font-size: 12px;
     word-break: keep-all;
   }
 
@@ -210,7 +234,7 @@
   }
 
   .firefly-content {
-    padding: 30px;
+    padding: 30px 0;
   }
 
   .firefly-content h2 {
@@ -230,10 +254,9 @@
 
   /* ===== RIGHT ===== */
   .firefly-right {
-    padding-top: 20px;
+    padding: 30px 0;
     min-height: unset;
     gap: 24px;
-    padding: 20px 30px;
   }
 
   .right-top h3 {
@@ -261,7 +284,7 @@
   }
 
   .firefly-card p {
-    font-size: var(--tablet780px---contents--desc--m);
+    font-size: var(--fs-app-desc);
     padding: 0 10px 14px;
   }
 
@@ -273,7 +296,9 @@
   }
 
   /* 플랜 */
-
+.plan{
+  padding-top: 50px;
+}
   .plan .h-inner {
     flex-wrap: wrap;
     gap: 25px;
@@ -284,113 +309,169 @@
     max-width: 100%;
     font-size: var(--tablet780px---visual-title--m);
   }
+
   .plan-title h2 {
     font-size: var(--tablet780px---visual-title--m);
   }
+
   .plan-title p {
     font-size: var(--tablet780px---visual--desc--m);
   }
-  .plan .plans-grid {
-    width: 100%;
-    order: 3;
-  }
 
-  .plan .plan-card {
-    flex: 1 1 calc(50% - 12px);
-  }
+
+  /* 더보기 타이틀 아래 오른쪽 */
   .plan-more {
     width: 100%;
-    order: 3;
-    display: flex;
-    justify-content: center;
-  }
-}
-@media (max-width: 550px) {
-  .plan {
-    padding: 40px 0;
+    justify-content: flex-end;
+    margin-top: -10px;
   }
 
-  .plan .h-inner {
-    gap: 20px;
+  .plan-more a {
+    flex-direction: row;
+    font-size: 14px;
+    gap: 4px;
   }
 
-  .plan .plans-grid {
-    gap: 12px;
-  }
-
-  .plan .plan-card {
-    flex: 1 1 100%;
-    min-width: 60%;
-  }
-
-  .plan .plan-btn {
+  /* 카드 3열 유지 */
+  .plan-container {
     width: 100%;
+    flex-wrap: column;
+    gap: 16px;
+  }
+
+  .plan-list {
+    width: 100%;
+    padding: 20px 14px;
+  }
+
+  .plan-type {
+    font-size: 13px;
+  }
+  .plan-list h3 {
+    font-size: 12px;
+  }
+  .price-w {
+    font-size: 18px;
+  }
+  .plan-listP {
+    font-size: 11px;
+  }
+  .plan-btn {
+    font-size: 12px;
+    padding: 8px 0;
   }
 }
+
 
 @media (max-width: 390px) {
   /* hero  */
 
-  .btn-join {
-    display: none;
-  }
-  .mainhero .hero-title {
-    font-size: var(--mobile390px---visual-title--s);
+  .hero {
+    padding-top: 160px;
   }
 
-  .mainhero .hero-content {
-    position: absolute;
-    top: 15%;
+  .hero-sub {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+    margin-bottom: 50px;
   }
 
   .btn-primary {
-    width: calc(100% - 40px); /* 좌우 여백 20px씩 */
+    width: 100%;
     max-width: 100%;
-    font-size: var(--fs-card-caption);
+    font-size: 14px;
     padding: 14px 0;
   }
 
   .btn-play {
-    width: calc(100% - 40px);
-    max-width: 100%;
+    width: 100%;
+
     justify-content: center;
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 50px;
     padding: 8px 0;
-    font-size: var(--fs-card-caption);
+    font-size: 15px;
   }
 
   /* ===== Firefly AI (하단) ===== */
   .hero-firefly {
-    position: absolute;
-
-    top: auto;
-    bottom: -200px;
-
-    left: 50%;
-    transform: translateX(-50%);
-
-    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
-  }
-
-  .firefly-label {
-    width: 100%;
     text-align: center;
-    align-items: center;
+    gap: 14px;
+    width: calc(100% - 32px);
+    position: absolute;
+    bottom: 130px;
+  }
+  .solution-title p {
+    font-size: 12px;
   }
 
-  .firefly-imgs {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
+  .solution-btn a {
+    font-size: 10px;
   }
 
   .fi-img {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
+  }
+  /* firefly */
+
+  .bg-video {
+    width: 100%;
+    height: 80%;
+  }
+
+  .firefly-content h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  .firefly-content p {
+    font-size: 10px;
+  }
+  .detail-btn {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+  .firefly-right {
+    padding: 0;
+    padding-bottom: 20px;
+  }
+  .right-top h3 {
+    font-size: 20px;
+    margin: 0;
+  }
+  .right-top p {
+    font-size: 10px;
+  }
+  .firefly-card h4 {
+    font-size: 12px;
+    padding: 5px 5px;
+  }
+  .firefly-card p {
+    font-size: 8px;
+    padding: 0px 5px 5px;
+  }
+  .firefly-btn {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  /* plan */
+  .plan-title h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  .plan-title p {
+    font-size: 10px;
   }
 }
